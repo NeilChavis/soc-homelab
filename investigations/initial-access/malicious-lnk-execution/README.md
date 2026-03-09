@@ -32,8 +32,48 @@ Indicators of suspicious behavior included:
 
 ## Evidence
 
-Screenshots in this folder demonstrate:
+### 1. Phishing HTML Lure
 
-1. The phishing-style HTML lure page
-2. Execution of the malicious LNK file
-3. The resulting process chain visible in Splunk
+The attack begins with a phishing-style HTML page designed to trick the user into downloading a malicious file.
+
+![HTML Lure Page](html_lure_page.png)
+
+This page mimics a legitimate document or invoice download to encourage the user to open the file.
+
+---
+
+### 2. Malicious LNK Execution
+
+When the victim downloads and executes the shortcut file, it launches a command on the system.
+
+![LNK Execution](lnk_execution_calc_1.png)
+
+The malicious shortcut is configured to execute a command that launches a payload when opened.
+
+Additional execution evidence:
+
+![LNK Execution Continued](lnk_execution_calc_2.png)
+
+This demonstrates how a simple shortcut file can execute commands on the system once triggered by the user.
+
+---
+
+### 3. Process Chain Detection
+
+Endpoint telemetry reveals the process chain created during execution.
+
+![Process Chain Detection](process_chain_detection_1.png)
+
+Security monitoring tools allow analysts to observe how the malicious shortcut spawns additional processes.
+
+Further investigation confirms the full process tree.
+
+![Process Chain Detection Continued](process_chain_detection_2.png)
+
+---
+
+## Investigation Conclusion
+
+This investigation demonstrates how a malicious Windows shortcut can be used as an initial access technique. A phishing-style HTML lure leads the user to download and execute a malicious LNK file, which then triggers command execution on the system.
+
+By reviewing endpoint telemetry and process chain data, analysts can reconstruct the attack sequence and identify suspicious behavior associated with user-driven malware execution.
