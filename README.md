@@ -1,40 +1,39 @@
-# SOC Homelab
+# SOC Homelab Investigations
 
-This project documents a personal SOC homelab used to simulate attacker activity and practice security monitoring and investigation workflows.
+This repository documents security investigations conducted within a personal SOC homelab environment. The lab simulates attacker behavior across multiple systems and demonstrates how security analysts detect and investigate malicious activity using endpoint telemetry, network monitoring, and SIEM analysis.
 
-The environment was developed to gain hands-on experience with endpoint telemetry, network monitoring, and SIEM-based investigations.
+## Lab Environment
 
-## Lab Components
+The homelab environment consists of several systems used to simulate attacker activity and collect security telemetry.
 
-- Windows 10 endpoint (victim system)
-- Kali Linux attacker machine
-- Ubuntu monitoring server
-- Splunk SIEM
-- Sysmon endpoint logging
-- Suricata IDS
-- Zeek network monitoring
-- Winlogbeat log forwarding
+• Kali Linux – attacker simulation  
+• Windows 10 – monitored endpoint  
+• Suricata / Zeek – network monitoring and traffic analysis  
+• Splunk – centralized log collection and investigation
 
-## Lab Architecture
+## Investigation Categories
 
-The lab simulates a small enterprise network where attacker activity from the Kali system generates telemetry across host and network sensors.
+The following investigations demonstrate how common attacker techniques appear in logs and how they can be analyzed from a SOC perspective.
 
-Endpoint activity such as process execution, command line activity, and registry changes are captured by Sysmon.
+### Initial Access
 
-Network activity is monitored by Suricata and Zeek to detect suspicious traffic and generate alerts.
+Simulated attacker entry techniques and the resulting endpoint and network activity.
 
-All telemetry is forwarded to Splunk where it can be searched, correlated, and investigated from a SOC analyst perspective.
+Investigations included:
 
-## Skills Demonstrated
+• Malicious LNK Execution  
+• RDP Authentication Activity  
 
-- SIEM log analysis
-- Endpoint telemetry analysis
-- Network traffic investigation
-- IDS alert investigation
-- Incident triage and analysis
+Location:
 
-## Future Investigations
+`investigations/initial-access/`
 
-- Persistence detection via registry run keys
-- Command and control detection
-- Suspicious PowerShell activity analysis
+## Goal of the Repository
+
+The goal of this repository is to demonstrate practical SOC investigation skills, including:
+
+• Log analysis  
+• Process chain investigation  
+• Authentication analysis  
+• SIEM-based detection and investigation  
+• Correlating endpoint and network telemetry
