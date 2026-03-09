@@ -19,3 +19,21 @@ HTML lure page
 The activity was investigated using Splunk by analyzing Sysmon Event ID 1 (Process Creation).
 
 The process chain observed:
+explorer.exe
+→ cmd.exe
+→ powershell.exe
+→ calc.exe
+
+Indicators of suspicious behavior included:
+
+- PowerShell execution with `ExecutionPolicy Bypass`
+- Hidden PowerShell window execution
+- Unusual process parent-child relationships
+
+## Evidence
+
+Screenshots in this folder demonstrate:
+
+1. The phishing-style HTML lure page
+2. Execution of the malicious LNK file
+3. The resulting process chain visible in Splunk
