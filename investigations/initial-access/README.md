@@ -23,7 +23,7 @@ Investigation includes:
 
 Location:
 
-`malicious-lnk-execution/`
+`rdp-authentication-activity/`
 
 ---
 
