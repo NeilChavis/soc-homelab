@@ -1,17 +1,47 @@
 
 # Initial Access Investigations
 
-This section contains attack simulations related to the **Initial Access** phase of the attack lifecycle.
+This section documents simulated initial access techniques observed within the SOC homelab environment.
 
-These scenarios demonstrate how attackers gain entry into a system and how those activities appear in endpoint and SIEM telemetry.
+The goal of these exercises is to understand how common attacker entry techniques appear in endpoint telemetry and how they can be investigated using SIEM tools such as Splunk.
 
-## Techniques Simulated
+Each investigation reconstructs attacker activity, correlates logs, and documents the evidence collected during analysis.
 
-- Malicious LNK File Execution (User Execution)
-- RDP Authentication Activity
+---
 
-Each scenario includes screenshots showing:
+## Investigations
 
-- Attack execution
-- Endpoint behavior
-- SIEM investigation in Splunk
+### Malicious LNK Execution
+
+This scenario simulates a phishing-style attack where a user downloads and executes a malicious Windows shortcut file. The shortcut launches a command that generates observable process activity on the endpoint.
+
+Investigation includes:
+
+• Phishing style HTML lure  
+• LNK execution behavior  
+• Process chain analysis
+
+Location:
+
+`malicious-lnk-execution/`
+
+---
+
+### RDP Authentication Activity
+
+This scenario simulates an attacker attempting to authenticate to a Windows system using Remote Desktop Protocol (RDP).
+
+Investigation includes:
+
+• RDP connection attempt from Kali attacker  
+• Windows authentication logs (Event ID 4624 / 4625)  
+• Network telemetry from Suricata  
+• Splunk log investigation
+
+Location:
+
+'rdp-authentication-activity/'
+
+---
+
+These investigations demonstrate how analysts can correlate endpoint logs, network telemetry, and SIEM data to investigate suspicious activity.
