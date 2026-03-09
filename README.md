@@ -21,8 +21,8 @@ Simulated attacker entry techniques and the resulting endpoint and network activ
 
 Investigations included:
 
-• Malicious LNK Execution  
-• RDP Authentication Activity  
+- [Malicious LNK Execution](investigations/initial-access/malicious-lnk-execution)
+- [RDP Authentication Activity](investigations/initial-access/rdp-authentication-activity)
 
 Location:
 
