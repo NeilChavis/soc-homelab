@@ -23,7 +23,7 @@ Investigation includes:
 
 Location:
 
-`rdp-authentication-activity/`
+`malicious-lnk-execution/`
 
 ---
 
@@ -40,7 +40,7 @@ Investigation includes:
 
 Location:
 
-'rdp-authentication-activity/'
+`rdp-authentication-activity/`
 
 ---
 
