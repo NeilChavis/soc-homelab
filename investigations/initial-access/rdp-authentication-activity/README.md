@@ -29,11 +29,6 @@ Windows logs record authentication attempts using Event IDs such as:
 
 These events provide visibility into login attempts, source systems, and authentication outcomes.
 
-ESplunk queries used during investigation:
-
-index=main EventCode=4624
-index=main EventCode=4625
-
 ## Evidence
 
 ### 1. RDP Connection Attempt from Kali
