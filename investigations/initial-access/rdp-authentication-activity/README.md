@@ -1,13 +1,38 @@
 # RDP Authentication Activity
 
-This investigation documents Remote Desktop Protocol (RDP) authentication activity from a Kali attacker system to a Windows endpoint.
+## Scenario Overview
 
-The goal is to observe how RDP login attempts appear in Windows logs and how they can be investigated using Splunk SIEM.
+This investigation simulates an attacker attempting to authenticate to a Windows system using Remote Desktop Protocol (RDP). RDP is commonly targeted by attackers attempting credential access or lateral movement within a network.
 
-Screenshots in this folder show:
-- RDP login attempt from Kali
-- Windows authentication activity
-- Splunk log investigation
+The goal of this simulation is to observe how RDP authentication attempts appear in endpoint logs and network telemetry, and how a SOC analyst can identify and investigate this activity using SIEM analysis.
+
+---
+
+## Attack Flow
+
+1. The attacker system (Kali Linux) initiates an RDP authentication attempt against the Windows endpoint.
+2. The Windows system records authentication events in the Windows Security Event Log.
+3. Network traffic related to the RDP connection is observed by the Suricata/Zeek network sensor.
+4. Endpoint and network logs are forwarded to Splunk.
+5. The activity is investigated using SIEM queries and log correlation.
+
+---
+
+## Detection & Investigation
+
+The investigation focuses on identifying authentication activity associated with RDP connections.
+
+Windows logs record authentication attempts using Event IDs such as:
+
+• **4624** – Successful logon  
+• **4625** – Failed logon attempt
+
+These events provide visibility into login attempts, source systems, and authentication outcomes.
+
+ESplunk queries used during investigation:
+
+index=main EventCode=4624
+index=main EventCode=4625
 
 ## Evidence
 
