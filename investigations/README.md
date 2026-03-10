@@ -2,9 +2,7 @@
 
 This section documents simulated security investigations conducted within the SOC homelab environment.
 
-Each investigation recreates attacker activity and demonstrates how a SOC analyst can detect, analyze, and investigate malicious behavior using endpoint telemetry, network monitoring, and SIEM analysis.
-
-The investigations are organized according to stages of the attack lifecycle.
+Each investigation recreates attacker activity and demonstrates how a SOC analyst can detect, analyze, and investigate malicious behavior using endpoint telemetry, network monitoring, and SIEM analysis. The investigations are organized according to stages of the attack lifecycle.
 
 ---
 
