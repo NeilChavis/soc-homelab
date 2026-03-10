@@ -5,16 +5,16 @@ The SOC homelab simulates attacker activity against a monitored endpoint while c
 ## Architecture Diagram
 
 Kali Linux (Attacker VM)  
-→ Simulated attacker activity  
+- Simulated attacker activity  
 
 Windows 10 (Victim Endpoint)  
-→ Sysmon + Windows Event Logs  
+- Sysmon + Windows Event Logs  
 
 Network Sensor (Suricata / Zeek)  
-→ Network traffic monitoring  
+- Network traffic monitoring  
 
 Splunk SIEM  
-→ Log ingestion, search, and investigation
+- Log ingestion, search, and investigation
 
 ## Data Flow
 
