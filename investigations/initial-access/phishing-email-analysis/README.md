@@ -54,7 +54,7 @@ However, these results only validated the suspicious sender domain itself and di
 
 As a result, the authentication results did not reduce the phishing assessment.
 
-![Authentication Analysis](auth_analysis.png)
+![Authentication Analysis](auth._analysis.png)
 
 *Figure 3: Screenshot showing authentication results associated with the suspicious sending domain.*
 
