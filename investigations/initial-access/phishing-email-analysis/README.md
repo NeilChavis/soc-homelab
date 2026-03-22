@@ -31,18 +31,32 @@ The sender was suspicious because the From and Return-Path fields both used rand
 This mattered because the sender identity did not match the service the email claimed to represent.
 
 This suggested the email likely originated from attacker controlled or otherwise suspicious infrastructure.
+
+![Sender Analysis](sender_analysis.png)
+
+*Figure 1: Screenshot showing suspicious sender details and mismatched sender infrastructure.*
+
 ### URL Analysis
 The embedded URL pointed to a file hosted on `storage[.]googleapis[.]com`.
 
 This was notable because the root domain is legitimate Google infrastructure, but the hosted HTML file itself did not appear to lead to a real billing page.
 
 VirusTotal relationship data also showed the domain is commonly communicated with and referenced by files, which suggests the platform can be abused to host or deliver malicious content.
+
+![URL Analysis](domain_analysis.png)
+
+*Figure 2: Screenshot showing URL and domain analysis findings for the embedded link.*
+
 ### Authentication Analysis
 Authentication analysis showed that SPF and DKIM passed for the sending domain.
 
 However, these results only validated the suspicious sender domain itself and did not establish trust in the claimed cloud provider.
 
 As a result, the authentication results did not reduce the phishing assessment.
+
+![Authentication Analysis](auth_analysis.png)
+
+*Figure 3: Screenshot showing authentication results associated with the suspicious sending domain.*
 
 ## Suggested Defensive Measures
 The sender domain, sending IP address, and embedded malicious URLs should be reviewed for blocking.
